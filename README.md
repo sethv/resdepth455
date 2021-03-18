@@ -1,11 +1,11 @@
-# CSE 455 final project - ResDepth
+# CSE 455 final project - ResDepth for the mountains
 Seth Vanderwilt
 3/17/21
 
-[**Project video**](https://linktovideohere)
+[**Project video overview (closer to 4 minutes, please 1.5x!)**](https://youtu.be/KqMj9Ku79SU)
 
 For my final project I've been working with  **[ResDepth: Learned Residual Stereo Reconstruction](https://openaccess.thecvf.com/content_CVPRW_2020/papers/w11/Stucker_ResDepth_Learned_Residual_Stereo_Reconstruction_CVPRW_2020_paper.pdf
-)**, a new deep learning method to refine stereo reconstruction from Corinne Stucker and Konrad Schindler at ETH Zürich. The goal of this project is to train a network to refine DEMs that we generate from high-resolution satellite images, i.e. given two stereo pairs produce a DEM and then refine it based on some learned priors.
+)**, a new deep learning method to refine stereo reconstruction from Corinne Stucker and Konrad Schindler at ETH Zürich. The goal of this project is to train a network to refine DEMs that we generate from high-resolution satellite images, i.e. given two stereo pairs produce a DEM and then refine it based on some learned priors. Stucker & Schindler are focused on improving reconstruction of urban scenes (Zürich), but we want to see if this will work out in nature, to study our local volcanoes.
 
 ResDepth description from the authors:
 > We propose an embarrassingly simple but very effective scheme for high-quality dense stereo reconstruction: (i) generate an approximate reconstruction with your favourite stereo matcher; (ii) rewarp the input images with that approximate model; (iii) with the initial reconstruction and the warped images as input, train a deep network to enhance the reconstruction by regressing a residual correction; and (iv) if desired, iterate the refinement with the new, improved reconstruction.
@@ -22,7 +22,7 @@ LiDAR data: in August-September 2015, Quantum Spatial flew around Mount Baker wi
 Given the stereo pair (orthorectified grayscale image rasters) and conventionally-generated DEM (also a 1-channel raster) as inputs, the network should produce a residual depth map that can then be applied to the input DEM to produce a smoother, more accurate result. We may provide further input data to the network, e.g. color/multispectral channels for the stereo images and/or land cover classifications (each pixel assigned to tree, snow, road, etc.).
 
 ## Dataset
-TODO- working on the Easton glacier tile 10UEU8598
+TODO- working on the Easton Glacier tile 10UEU8598
 
 ## Code
 Copies in this repo will be outdated (using Colab directly)
@@ -52,9 +52,9 @@ TODO
 TODO
 
 ## Discussion
-This is a work-in-progress, as I have not yet gotten our LiDAR & satellite data into a nice training & validation dataset for experiments.
-Currently working on converting these to tiles with identical resolution for the first round of experiments...
-I look forward to seeing the official ResDepth publication and code release at some point, as even with correct interpretation and the same training data I'm sure our models would have some differences in hyperparameter settings etc.
+This is a work-in-progress, as I have not finished processing our LiDAR & satellite data into a nice training & validation dataset for experiments.
+Currently working on converting these to tiles with matching resolution for the first round of experiments...
+I look forward to seeing the official ResDepth publication and code release at some point, as even with correct interpretation and the same training data I'm sure our models have some differences in hyperparameter settings etc.
 
 ## References
 ResDepth: Learned Residual Stereo Reconstruction. Corinne Stucker, Konrad Schindler; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops, 2020, pp. 184-185. https://openaccess.thecvf.com/content_CVPRW_2020/papers/w11/Stucker_ResDepth_Learned_Residual_Stereo_Reconstruction_CVPRW_2020_paper.pdf
