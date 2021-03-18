@@ -2,7 +2,10 @@
 Seth Vanderwilt
 3/17/21
 
-For my final project I've been working with  **ResDepth: Learned Residual Stereo Reconstruction**, a new deep learning method to refine stereo reconstruction from Corinne Stucker and Konrad Schindler at ETH Zürich. The goal of this project is to train a network to refine DEMs that we generate from high-resolution satellite images, i.e. given two stereo pairs produce a DEM and then refine it based on some learned priors.
+[**Project video**](https://linktovideohere)
+
+For my final project I've been working with  **[ResDepth: Learned Residual Stereo Reconstruction](https://openaccess.thecvf.com/content_CVPRW_2020/papers/w11/Stucker_ResDepth_Learned_Residual_Stereo_Reconstruction_CVPRW_2020_paper.pdf
+)**, a new deep learning method to refine stereo reconstruction from Corinne Stucker and Konrad Schindler at ETH Zürich. The goal of this project is to train a network to refine DEMs that we generate from high-resolution satellite images, i.e. given two stereo pairs produce a DEM and then refine it based on some learned priors.
 
 ResDepth description from the authors:
 > We propose an embarrassingly simple but very effective scheme for high-quality dense stereo reconstruction: (i) generate an approximate reconstruction with your favourite stereo matcher; (ii) rewarp the input images with that approximate model; (iii) with the initial reconstruction and the warped images as input, train a deep network to enhance the reconstruction by regressing a residual correction; and (iv) if desired, iterate the refinement with the new, improved reconstruction.
@@ -25,9 +28,9 @@ TODO- working on the Easton glacier tile 10UEU8598
 Copies in this repo will be outdated (using Colab directly)
 
 ### What I've implemented
-* I implemented the network in Figure 2 of the paper in PyTorch. To start I am assuming 128x128 inputs and thus using fewer layers, as described in the paper.
-TODO ![Figure2]()
 * Work in progress: dataset loading & matching tools to get the stereo pairs + DEM + ground truth DEM
+* I implemented the ResDepth network below in PyTorch. To start I am assuming 128x128 inputs and thus using fewer layers, as described in the paper.
+<img width="871" alt="image" src="https://user-images.githubusercontent.com/568050/111573180-4097bf00-8767-11eb-87fd-239f8e7050ed.png">
 
 ### I've used the following existing Python libraries so far...
 * holoviz
